@@ -1,3 +1,5 @@
+// This file contains a exercise of conditions.
+
 /* Task1. Write a conditional statement to find the sign of product of three numbers. Display the
 result in the console with the specified sign.
 Sample numbers: 3, -7, 2
