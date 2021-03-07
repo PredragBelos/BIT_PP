@@ -1,3 +1,4 @@
+// This file contains a exercise of switch.
 
 /* 1. Write a program that shows text representation of a day in a week for a number 
 input from 1 to 7. Print output in console. 
@@ -8,28 +9,28 @@ var dayInWeek = 5;
 
 switch (dayInWeek) {
     case 1:
-        console.log("Ponedeljak");
+        console.log("Monday");
         break;
     case 2:
-        console.log("Utorak");
+        console.log("Tuesday");
         break;
     case 3:
-        console.log("Sreda");
+        console.log("Wednesday");
         break;
     case 4:
-        console.log("Cetvrtak");
+        console.log("Thursday");
         break
     case 5:
-        console.log("Petak");
+        console.log("Friday");
         break
     case 6:
-        console.log("Subota");
+        console.log("Saturday");
         break
     case 7:
-        console.log("Nedelja");
+        console.log("Sunday");
         break  
     default:
-        console.log("Uneti podatak ne predstavlja dan u nedelji.");
+        console.log("The data entered does not represent the day of the week.");
         break;
 
 }
@@ -44,25 +45,25 @@ var dayInWeek1 = 10;
 
 switch (dayInWeek1) {
     case 1:
-        console.log("Ponedeljak");
+        console.log("Monday");
         break;
     case 2:
-        console.log("Utorak");
+        console.log("Tuesday");
         break;
     case 3:
-        console.log("Sreda");
+        console.log("Wednesday");
         break;
     case 4:
-        console.log("Cetvrtak");
+        console.log("Thursday");
         break
     case 5:
-        console.log("Petak");
+        console.log("Friday");
         break
     case 6:
-        console.log("Subota");
+        console.log("Saturday");
         break
     case 7:
-        console.log("Nedelja");
+        console.log("Sunday");
         break  
     default:
         console.log("Input must be a number between 1 and 7.");
@@ -106,40 +107,40 @@ var mount = 10;
 
 switch (mount) {
     case 1:
-        console.log("Januar");
+        console.log("January");
         break;
     case 2:
-        console.log("Februar");
+        console.log("February");
         break;
     case 3:
-        console.log("Mart");
+        console.log("March");
         break;
     case 4:
         console.log("April");
         break
     case 5:
-        console.log("Maj");
+        console.log("May");
         break
     case 6:
         console.log("Jun");
         break
     case 7:
-        console.log("Jul");
+        console.log("July");
         break  
     case 8:
-        console.log("Avgust");
+        console.log("August");
         break;
     case 9:
-         console.log("Septembar");
+         console.log("September");
         break
     case 10:
-         console.log("Oktobar");
+         console.log("Oktober");
         break
     case 11:
-         console.log("Novembar");
+         console.log("November");
         break
     case 12:
-         console.log("Decembar");
+         console.log("December");
         break 
     default:
         console.log("Input must be a number between 1 and 12.");
@@ -158,21 +159,21 @@ switch (mount1) {
     case 2:
     case 3:
     case 12:
-        console.log("Zima");
+        console.log("Winter");
         break;
     case 4:
     case 5:
-        console.log("Prolece");
+        console.log("Spring");
         break
     case 6:
     case 7: 
     case 8:
-        console.log("Leto");
+        console.log("Summer");
         break;
     case 9:     
     case 10:    
     case 11:
-        console.log("Jesen");
+        console.log("Autumn");
         break;  
     default:
         console.log("Input must be a number between 1 and 12.");
@@ -226,17 +227,17 @@ switch (grade) {
     case "Beograd":
     case "Novi Sad":
     case "Kragujevac":
-        console.log("Srbija");
+        console.log("Serbia");
         break;
     case "Zagreb":
     case "Split":
     case "Vukovar":
-        console.log("Hrvatska");
+        console.log("Croatia");
         break
     case "Skopje":
     case "Gevgelija": 
     case "Ohrid":
-        console.log("Makedonija");
+        console.log("Macedonia");
         break;
     case "Sarajevo":     
     case "Banja Luka":    
@@ -246,7 +247,7 @@ switch (grade) {
     case "Podgorica":     
     case "Tivat":    
     case "Kotor":
-        console.log("Crna Gora");
+        console.log("Montenegro");
         break;  
     default:
         console.log("Please choose a different city");
