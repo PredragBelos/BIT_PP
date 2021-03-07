@@ -11,14 +11,15 @@ var c = 2;
 var product = a + b + c;
 
 if(product<0) {
-    console.log("Proizvod ima predznak -");  
+    console.log("The sum has a sign -");  
 }
 else if(product>0) {
-    console.log("Proizvod ima predznak +"); 
+    console.log("The sum has a sign +"); 
 }
 else {
-    console.log("Proizvod je nula");
+    console.log("The sum is zero");
 }
+
 
 /* Task 2. Write a conditional statement to find the largest of five numbers. Display the result in the
 console.
@@ -60,7 +61,7 @@ else{
     result = number5;
 }
 
-console.log("Najveci broj od pet brojeva je br. " + result);
+console.log("The largest of the five numbers is " + result);
 
 
 /* Task 3. Write a conditional statement to print three numbers as sorted number list.
@@ -102,14 +103,15 @@ else if (e<small && e>smallest){
     smaller = f
 }
 
-console.log(small + " " + smaller + " " + smallest);
+console.log(small + ", " + smaller + ", " + smallest);
+
 
 /* Task 4. Write a program to check if the variable is a number and if it’s a number, check if it is divisible by 2. If it is, print the result, if not, show “X”.
 Sample input: 10  					Sample input: 7
 Output: 10 / 2 = 5					Output: X  
 */
 
-var x = 7;
+var x = 8;
 
 if(typeof x ==="number"){
     if(x%2===0){
@@ -120,8 +122,9 @@ if(typeof x ==="number"){
     }
 }
 else{
-    console.log("Varijabla nije broj");
+    console.log("Variable is not a number");
 }
+
 
 /* Task 5. Write a program that compares two numbers and displays the larger. Display the result in the console.
 */
@@ -155,6 +158,7 @@ else{
 
 console.log("F = " + fahrenheit + " C = " + celsius);
 
+
 /* Task 7. Write a JavaScript program to get the difference between a given number and 13, if the number is greater than 13 return double difference between that number and 13.
 	Sample Input: 11					Sample Input: 32
 	Output : 2						Output : 38
@@ -172,6 +176,7 @@ else{
     console.log((num - 13)*2);
 }
 
+
 /* Task 8. Write a JavaScript program to compute the sum of the two given integers. If the two values are same, then returns triple their sum.
 	Sample Input: 12,5					Sample Input: 8,8
 	Output : 17						Output : 48
@@ -187,6 +192,7 @@ else{
     console.log(a1 + a2);
 }
 
+
 /* Task 9. Write a JavaScript program to check two given numbers and print “true” if one of the number is 50 or if their sum is 50.
 */
 
@@ -200,7 +206,8 @@ else{
     console.log(false);
 }
 
-/* Moze se napisati i samo ovaj izraz console.log(a3===50 || a4===50 || a3 + a4 === 50); */
+// Only this expression can be written console.log(a3===50 || a4===50 || a3 + a4 === 50);
+
 
 /* Task 10. Write a JavaScript program to check a given integer is within 20 of 100 or 400, and print range in which number belongs.
 Sample Input: 13			Sample Input: 34			Sample Input: 256
@@ -219,5 +226,5 @@ else if(c1>100 && c1<400){
     console.log("100 ⇔ 400");
 }
 else if(c1>400){
-    console.log("Broj nije u opsegu.");
+    console.log("The number is out of range.");
 }
