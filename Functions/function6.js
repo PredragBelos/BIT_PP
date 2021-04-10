@@ -228,55 +228,50 @@ console.log(ArrMedian(a));
 
 /*
 10. Write a function to find the element that occurs most frequently.
+*/
 
+// First way to resolve a exercise:
 
-var arr = ["a", "b", "a", "a", "c", "b"];
-var sortArr = [];
-sortArr[0] = arr[0];
+var arr = ["a", "b", "a", "b", "c", "b","b"];
+var uniqueEl = [];
+var max = 0;
+var element;
 
 for(var i = 0; i < arr.length; i++){
-   
-    for(var j = i; j < arr.length; j++){
-        if(arr[j] === arr[i]){
-            sortArr[sortArr.length] = arr[j];
+    var isExist = false;
+
+    for(var j = 0; j < uniqueEl.length; j++){
+        if(arr[i] === uniqueEl[j]){
+            isExist = true;
             break;
         }
     }
+    if(!isExist){
+        uniqueEl[uniqueEl.length] = arr[i];
+    }
+}
+
+for(var i = 0; i < uniqueEl.length; i++){
     
-}
+    var count = 0;
+    
+    for(var j = 0; j < arr.length; j++){
+        
+        if(uniqueEl[i] === arr[j]){
+           count += 1;
+        }
 
-console.log(sortArr);
-
-
-var nesto = ["a", "b"];
-var arr = ["a", "b", "a", "a", "c", "b"];
-var sortArr = [];
-
-for(var i = 0; i < arr.length; i++){
-    if(nesto === arr[i]){
-        sortArr[sortArr.length] = nesto;
-        break;
     }
-}
 
-console.log(sortArr);
-
-var arr = ["a", "b", "a", "a", "c", "b"];
-var sortArr = [];
-sortArr[sortArr.length] = arr[0];
-
-//console.log(sortArr);
-var j = 0;
-
-for(var i = 1; i < arr.length; i++){
-    if(arr[i] !== sortArr[j]){
-        sortArr[sortArr.length] = arr[i];
-        j++;
+    if(count > max){
+        max = count;
+        element = uniqueEl[i];
+        
     }
+    count = 0;
 }
-console.log(sortArr);
 
-*/
+console.log(element);
 
 
 /*
@@ -416,7 +411,7 @@ For example the list ["Hello", "World", "in", "a", "frame"] gets printed as:
 *********
 */
 
-/*
+
 var arr = ["Hello", "World", "in", "a", "frame"];
 var letter = 0;
 var result = "";
@@ -460,6 +455,10 @@ for(var j = 1; j <= arr.length + 2; j++){
 }
 
 console.log(result);
+
+// naci najduzi lingth,
+// izbildovati gornju i donju ivicu i ubaciti zvezde;
+// 
 */
 
 
