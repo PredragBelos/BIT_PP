@@ -254,35 +254,63 @@ console.log(numberOfLetter);
 Output:  25. 10. 2018. 
 */
 
-var date = "24.10.2018.";
-var nextDay = "";
-var day = "";
-var month = "";
-var year = "";
+var date = "28.02.2018.";
 
-function convertStringToNumber(string) {
-    return parseInt(string);
-}
+(
+function nextDay(date) {
+    var nextDay = "";
+    var day = "";
+    var month = "";
+    var year = "";
 
-for (var i = 0; i < date.length; i++) {
-    if (i === 0 || i === 1) {
-        day += date[i];
+    function convertStringToNumber(string) {
+        return parseInt(string);
     }
-    else if (i === 3 || i === 4) {
-        month += date[i];
+
+    for (var i = 0; i < date.length; i++) {
+        if (i === 0 || i === 1) {
+            day += date[i];
+        }
+        else if (i === 3 || i === 4) {
+            month += date[i];
+        }
+        else if (i === 6 || i === 7 || i === 8 || i === 9) {
+            year += date[i];
+        }
     }
-    else if (i === 6 || i === 7 || i === 8 || i === 9) {
-        year += date[i];
+
+    day = convertStringToNumber(day);
+    month = convertStringToNumber(month);
+    year = convertStringToNumber(year);
+
+    day++;
+
+    if (month === 1 || month === 3 || month === 5 || month === 7 || month === 8 || month === 10) {
+        if (day === 32) {
+            day = 1;
+            month++
+        }
     }
-}
+    else if (month === 12 && day === 32) {
+        day = 1;
+        mount = 1;
+    }
+    else if (month === 2 && day === 29) {
+        day = 1;
+        month++;
+    }
+    else if (month === 4 || month === 6 || month === 9 || month === 11 && day === 31) {
+        day = 1;
+        month++
+    }
+    else {
+        day++;
+        month++;
+    }
 
-day = convertStringToNumber(day);
-month = convertStringToNumber(month);
-year = convertStringToNumber(year);
+    console.log(nextDay = day + "." + month + "." + year + ".");
 
-day++;
-
-console.log(nextDay = day + "." + month + "." + year + ".");
+})(date);
 
 
 /*
@@ -290,12 +318,16 @@ console.log(nextDay = day + "." + month + "." + year + ".");
 Output:  23. 10. 2018.
 */
 
-var date = "24.10.2018.";
-var nextDay = "";
-var day = "";
-var month = "";
-var year = "";
+var date = "01.09.2018.";
 
+(
+function previousDay(date) {
+    var nextDay = "";
+    var day = "";
+    var month = "";
+    var year = "";
+
+    
 function convertStringToNumber(string) {
     return parseInt(string);
 }
@@ -311,14 +343,39 @@ for (var i = 0; i < date.length; i++) {
         year += date[i];
     }
 }
-
 day = convertStringToNumber(day);
 month = convertStringToNumber(month);
 year = convertStringToNumber(year);
 
 day--;
 
+if (month === 12 || month === 5 || month === 7 || month === 8 || month === 10) {
+    if (day === 0) {
+        day = 30;
+        month--;
+    }
+}
+else if (month === 1 && day === 0) {
+    day = 31;
+    mount = 12;
+}
+else if (month === 3 && day === 0) {
+    day = 28;
+    mount = 2;
+}
+else if (month === 2 || month === 4 || month === 6 || month === 9 || month === 11 && day === 31) {
+    day = 31;
+    month--;
+}
+else {
+    day++;
+    month++;
+}
+
 console.log(nextDay = day + "." + month + "." + year + ".");
+    
+})(date);
+
 
 /*
 12. 
