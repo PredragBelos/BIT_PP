@@ -409,4 +409,46 @@ Input: 25 February
 Output: 5 days
 */
 
+function calculateDaysBetwinBirthdayAndToday(birday,) {
+    var today = new Date();
+    var birday = new Date(birday);
+
+    // Time in miliseconds since start calculating time to birday
+    var timeSinceBigins2 = birday.getTime();
+
+    // Time in miliseconds since start calculating time to today
+    var timeSinceBigins1 = today.getTime();
+
+    // Milisecondt in one day
+    var milisecondPerDay = 86400000;
+
+    // Time in days since start calculating time to birday
+    var timeSineBigins2InDays = timeSinceBigins2 / milisecondPerDay;
+
+    // Time in days since start calculating time to today
+    var timeSineBigins1InDays = timeSinceBigins1 / milisecondPerDay;
+
+    //Diference in days between birday and today
+    var diferenceInDays = timeSineBigins2InDays - timeSineBigins1InDays;
+
+    console.log(diferenceInDays.toFixed(0));
+}
+
+calculateDaysBetwinBirthdayAndToday("05/24/2021");
+
+
+/*
+9. Write a function that for a given departure and arrival time calculates the time the trip takes.
+	Input: 8:22:13 11:43:22
+	Output: 3 hours 21 minutes 9 seconds
+*/
+
+
+
+
+
+
+
+
+
 
