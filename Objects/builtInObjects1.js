@@ -391,7 +391,7 @@ var array = [...string];
 
 var number = 2015;
 
-(function checkNumber(num){
+(function checkNumber(num) {
     var chechPoint;
 
     chechPoint = num >= 1900 && num <= 2018;
@@ -439,9 +439,179 @@ calculateDaysBetwinBirthdayAndToday("05/24/2021");
 
 /*
 9. Write a function that for a given departure and arrival time calculates the time the trip takes.
-	Input: 8:22:13 11:43:22
-	Output: 3 hours 21 minutes 9 seconds
+    Input: 8:22:13 11:43:22
+    Output: 3 hours 21 minutes 9 seconds
 */
+
+var time1 = "8:22:13";
+var time2 = "11:43:22";
+
+function calculateTimeBetweenTime2AndTime1(time1, time2) {
+    var time1Elements;
+    var time2Elements;
+    var differenceBetweenHours;
+    var differenceBetweenMinutes;
+    var differenceBetweenSeconds;
+    var differenceArray = [];
+    var hour;
+    var minutes;
+    var seconds;
+    var result;
+
+    // Change string elements to array elements
+    time1Elements = time1.split(":");
+    time2Elements = time2.split(":");
+
+    // Calculate difference between array elements
+    differenceBetweenHours = time2Elements[0] - time1Elements[0];
+    differenceBetweenMinutes = time2Elements[1] - time1Elements[1];
+    differenceBetweenSeconds = time2Elements[2] - time1Elements[2];
+
+    // Save value in new array
+    differenceArray = [differenceBetweenHours, differenceBetweenMinutes, differenceBetweenSeconds];
+
+
+    hour = parseInt(differenceArray[0]);
+    minutes = parseInt(differenceArray[1]);
+    seconds = parseInt(differenceArray[2]);
+
+    // Check relation between seconds, minutes and hours
+    if (seconds < 0) {
+        seconds = 60 + seconds;
+        minutes--;
+    }
+    if (minutes < 0) {
+        minutes = 60 + minutes;
+        hour--;
+    }
+
+    result = hour + ":" + minutes + ":" + seconds;
+
+    console.log(result);
+}
+
+calculateTimeBetweenTime2AndTime1(time1, time2);
+
+
+/*
+10.
+a) Write a constructor function that creates points in space. Each point in space has 
+its own x, y, and z coordinate. For example, (3, 5, 1) can be a point in space.
+
+
+b) Write a function that calculates the distance between two points in the space.
+
+*/
+
+var point1 = [3, 5, 1];
+var point2 = [5, 3, 4];
+
+function distanceBetweenTwoPoints(arr1, arr2) {
+    //Constructor function for creating points
+    function Point(posX, posY, posZ) {
+        this.x = posX;
+        this.y = posY;
+        this.z = posZ;
+    }
+
+    // Use try and catch for check type of input for cordinates
+    try {
+
+        if (typeof (arr1[0]) === "number" && typeof (arr1[1]) === "number" && typeof (arr1[2]) === "number" && typeof (arr2[0]) === "number" && typeof (arr2[1]) === "number" && typeof (arr2[2]) === "number") {
+
+            // Create two points for calculating length
+            var point1 = new Point(arr1[0], arr1[1], arr1[2]);
+            var point2 = new Point(arr2[0], arr2[1], arr2[2]);
+
+            var xDifference = Math.abs(point1.y - point2.y);
+            var zDifference = Math.abs(point1.z - point2.z);
+            var yDifference = Math.abs(point1.y - point2.y);
+
+            var a = Math.sqrt(xDifference ** 2 + yDifference ** 2);
+
+            var result = Math.sqrt(a ** 2 + zDifference ** 2).toFixed(2);
+
+            return result;
+        }
+        else {
+            throw new Error("Cordinates for points isn't number.");
+        }
+
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
+var distance = distanceBetweenTwoPoints(point1, point2)
+
+console.log(distance);
+
+
+/*
+11.
+a) Write a function that generates a random integer value between 5 and 20.
+b) Write a function that generates a random integer value between 50 and 100. 
+c) Write a function which expects a number and a callback generator function 
+   and returns an array of numbers produced by the generator function.  
+*/
+
+// a), b)
+function generateNumberBetween0And100(max, min) {
+    var random = Math.floor((Math.random() * max) + min);
+
+    if (random > max) {
+        random = min + Math.floor((0.05 * random));
+    }
+    else {
+        random = random;
+    }
+
+    try {
+        if (random > max) {
+            throw new Error("Uhvatio je veci broj");
+        }
+    } catch (error) {
+        console.log(error.message);
+    }
+
+    return random;
+}
+
+console.log(generateNumberBetween0And100(50, 20));
+
+// c)
+
+function generateRandomNumber(min, max, numberOfArrayElements) {
+    var elements = [];
+    function generateNumberBetween0And100(max, min) {
+        var random = Math.floor((Math.random() * max) + min);
+    
+        if (random > max) {
+            random = min + Math.floor((0.05 * random));
+        }
+        else {
+            random = random;
+        }
+    
+        try {
+            if (random > max) {
+                throw new Error("Uhvatio je veci broj");
+            }
+        } catch (error) {
+            console.log(error.message);
+        }
+    
+        return random;
+    }
+
+    for (var i = 0; i <= numberOfArrayElements; i++) {
+        elements[elements.length] = generateNumberBetween0And100(max, min);
+    }
+
+    console.log(elements);
+}
+
+generateRandomNumber(40, 80, 20);
 
 
 
